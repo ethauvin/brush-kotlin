@@ -1,5 +1,6 @@
 /**
  * SyntaxHighlighter Syntax for Kotlin
+ * https://github.com/ethauvin/shBrushKotlin
  *
  * @version
  * 0.1.0 (July 22, 2016)
