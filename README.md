@@ -1,6 +1,6 @@
 # brush-kotlin
 
-Kotlin brush module for [SyntaxHighlighter](https://github.com/syntaxhighlighter/syntaxhighlighter).
+[Kotlin](https://kotlinlang.org/) brush module for [SyntaxHighlighter](https://github.com/syntaxhighlighter/syntaxhighlighter).
 
 ## Usage
 
@@ -8,4 +8,4 @@ Please see [Building Instructions](https://github.com/syntaxhighlighter/syntaxhi
 
 ## License
 
-MIT
+[MIT](https://github.com/ethauvin/brush-kotlin/blob/master/LICENSE.txt)
