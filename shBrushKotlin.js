@@ -3,7 +3,7 @@
  *
  * @version
  * 0.1.0 (July 22, 2016)
- * 
+ *
  * @copyright
  * Copyright (C) 2016 Erik C. Thauvin. http://erik.thauvin.net/
  * Copyright (C) 2004-2010 Alex Gorbatchev. http://alexgorbatchev.com/SyntaxHighlighter
@@ -13,41 +13,41 @@
  */
 ;(function()
 {
-	// CommonJS
-	typeof(require) != 'undefined' ? SyntaxHighlighter = require('shCore').SyntaxHighlighter : null;
+    // CommonJS
+    typeof(require) != 'undefined' ? SyntaxHighlighter = require('shCore').SyntaxHighlighter : null;
 
-	function Brush()
-	{
-		var keywords =	'abstract annotation as break by catch class companion const constructor continue' + 
-						' crossinline data do dynamic else enum external false final finally for fun get if' +
-						' import in infix inline inner interface internal is lateinit noinline null object' + 
-						' open operator out override package private protected public reified return sealed' +
-						' set super tailrec this throw trait true try type val var vararg when where while' +
-						' String Array Unit Int';
+    function Brush()
+    {
+        var keywords =  'abstract annotation as break by catch class companion const constructor continue' +
+                        ' crossinline data do dynamic else enum external false final finally for fun get if' +
+                        ' import in infix inline inner interface internal is lateinit noinline null object' +
+                        ' open operator out override package private protected public reified return sealed' +
+                        ' set super tailrec this throw trait true try type val var vararg when where while' +
+                        ' String Array Unit Int';
 
-		this.regexList = [
-			{ regex: SyntaxHighlighter.regexLib.singleLineCComments,	css: 'comments' },		// one line comments
-			{ regex: /\/\*([^\*][\s\S]*)?\*\//gm,						css: 'comments' },	 	// multiline comments
-			{ regex: /\/\*(?!\*\/)\*[\s\S]*?\*\//gm,					css: 'preprocessor' },	// documentation comments
-			{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,		css: 'string' },		// strings
-			{ regex: SyntaxHighlighter.regexLib.singleQuotedString,		css: 'string' },		// strings
-			{ regex: /\b([\d]+(\.[\d]+)?|0x[a-f0-9]+)\b/gi,				css: 'value' },			// numbers
-			{ regex: /(?!\@interface\b)\@[\$\w]+\b/g,					css: 'color1' },		// annotation @anno
-			{ regex: /\@interface\b/g,									css: 'color2' },		// @interface keyword
-			{ regex: new RegExp(this.getKeywords(keywords), 'gm'),		css: 'keyword' }		// java keyword
-			];
+        this.regexList = [
+            { regex: SyntaxHighlighter.regexLib.singleLineCComments,    css: 'comments' },      // one line comments
+            { regex: /\/\*([^\*][\s\S]*)?\*\//gm,                       css: 'comments' },      // multiline comments
+            { regex: /\/\*(?!\*\/)\*[\s\S]*?\*\//gm,                    css: 'preprocessor' },  // documentation comments
+            { regex: SyntaxHighlighter.regexLib.doubleQuotedString,     css: 'string' },        // strings
+            { regex: SyntaxHighlighter.regexLib.singleQuotedString,     css: 'string' },        // strings
+            { regex: /\b([\d]+(\.[\d]+)?|0x[a-f0-9]+)\b/gi,             css: 'value' },         // numbers
+            { regex: /(?!\@interface\b)\@[\$\w]+\b/g,                   css: 'color1' },        // annotation @anno
+            { regex: /\@interface\b/g,                                  css: 'color2' },        // @interface keyword
+            { regex: new RegExp(this.getKeywords(keywords), 'gm'),      css: 'keyword' }        // java keyword
+            ];
 
-		this.forHtmlScript({
-			left	: /(&lt;|<)%[@!=]?/g, 
-			right	: /%(&gt;|>)/g 
-		});
-	};
+        this.forHtmlScript({
+            left    : /(&lt;|<)%[@!=]?/g,
+            right   : /%(&gt;|>)/g
+        });
+    };
 
-	Brush.prototype	= new SyntaxHighlighter.Highlighter();
-	Brush.aliases	= ['kotlin'];
+    Brush.prototype = new SyntaxHighlighter.Highlighter();
+    Brush.aliases   = ['kotlin'];
 
-	SyntaxHighlighter.brushes.Kotlin = Brush;
+    SyntaxHighlighter.brushes.Kotlin = Brush;
 
-	// CommonJS
-	typeof(exports) != 'undefined' ? exports.Brush = Brush : null;
+    // CommonJS
+    typeof(exports) != 'undefined' ? exports.Brush = Brush : null;
 })();
